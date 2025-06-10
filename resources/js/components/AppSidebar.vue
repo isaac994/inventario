@@ -5,7 +5,7 @@ import NavUser from '@/components/NavUser.vue';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, Folder, LayoutGrid } from 'lucide-vue-next';
+import { BarChart3, BookOpen, Boxes, FileText, Folder, FolderKanban, LayoutGrid, Receipt, UserCheck, UserCog, Users } from 'lucide-vue-next';
 import AppLogo from './AppLogo.vue';
 import { ShoppingCart } from 'lucide-vue-next'; // ✅ versión para Vue
 
@@ -19,13 +19,46 @@ const mainNavItems: NavItem[] = [
     {
  title: 'Categorías',
  href: '/categorias',
- icon: Folder,
+ icon: FolderKanban,
 },
 {
  title: 'Productos',
  href: '/productos',
- icon: ShoppingCart,
-}
+ icon: Boxes,
+},
+{
+ title: 'Ventas',
+ href: '/ventas',
+ icon: Receipt,
+},
+{
+ title: 'Usuarios',
+ href: '/usuarios',
+ icon: Users,
+},
+{
+        title: 'Reportes',
+        href: '/reportes',
+        icon: Users,
+        children: [
+            {
+                title: 'Por Fecha',
+                href: '/reporte/fecha',
+                icon: FileText,
+            },
+            {
+                title: 'Por Cliente',
+                href: '/reporte/cliente',
+                icon: UserCheck,
+            },
+            {
+                title: 'Por Vendedor',
+                href: '/reporte/vendedor',
+                icon: UserCog,
+            },
+        ],
+    },
+
 
 ];
 
